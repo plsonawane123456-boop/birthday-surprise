@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Birthday Surprise ❤️</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script&family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="passwordScreen">
+      <h2>Enter the Secret Password ❤️</h2>
+
+      <input type="password" id="passwordInput" />
+
+      <button id="unlockBtn">Unlock the Surprise</button>
+
+      <p id="passwordMessage"></p>
+    </div>
+
+    <div class="container">
+      <h1>Something special is waiting for you ❤️</h1>
+
+      <div id="countdown">
+        <span id="days">00</span>d : <span id="hours">00</span>h :
+        <span id="minutes">00</span>m : <span id="seconds">00</span>s
+      </div>
+
+      <button id="startBtn" disabled>Start the Surprise</button>
+    </div>
+
+    <button id="musicToggle" class="music-btn">🔊</button>
+
+    <div id="questionBox" class="hidden">
+      <h2 id="questionText"></h2>
+
+      <div class="btnRow">
+        <button id="yesBtn">YES ❤️</button>
+
+        <button id="noBtn">NO 🙈</button>
+      </div>
+
+      <p id="response"></p>
+    </div>
+
+    <div id="gameSection" class="hidden">
+      <h2>Match Our Memories ❤️</h2>
+
+      <div class="memory-grid" id="memoryGrid"></div>
+
+      <p id="gameMessage"></p>
+
+      <button id="continueBtn" class="hidden">Continue the surprise 💖</button>
+    </div>
+
+    <div id="cakeSection" class="hidden">
+      <h2 id="cakeTitle">Preparing Something Sweet... 🎂</h2>
+
+      <div class="cake-area">
+        <div class="plate"></div>
+
+        <div class="cake">
+          <div class="cake-base"></div>
+
+          <div class="icing">
+            <div class="drip d1"></div>
+            <div class="drip d2"></div>
+            <div class="drip d3"></div>
+          </div>
+
+          <div class="strawberries">
+            <div class="berry">🍓</div>
+            <div class="berry">🍓</div>
+            <div class="berry">🍓</div>
+          </div>
+
+          <div class="candles">
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <button id="blowBtn" class="hidden">Blow the Candles 🎂</button>
+      <p id="cakeMessage"></p>
+
+      <button id="celebrateBtn" class="hidden">Let's Celebrate! 🎉</button>
+    </div>
+
+    <div id="photoViewer" class="hidden">
+      <div class="viewer-backdrop"></div>
+
+      <div class="viewer-content">
+        <img id="viewerImg" src="" />
+        <p id="viewerCaption"></p>
+      </div>
+    </div>
+
+    <div id="gallerySection" class="hidden">
+      <h2>Our Beautiful Memories 💖</h2>
+
+      <div class="carousel-container">
+        <div id="carousel"></div>
+      </div>
+
+      <button id="loveMeterBtn" class="hidden">Continue ❤️</button>
+    </div>
+
+    <div id="loveMeterSection" class="hidden">
+      <h2>How much do you love me? ❤️</h2>
+      <input type="range" id="loveSlider" min="0" max="100" value="0" />
+      <p id="loveValue">0%</p>
+      <p id="loveMessage"></p>
+      <button id="letterBtn" class="hidden">One More Surprise 💌</button>
+    </div>
+
+    <div id="letterSection" class="hidden">
+      <h2>A Letter For You 💌</h2>
+      <div class="envelope" id="envelope">
+        <div class="flap"></div>
+      </div>
+      <button id="openLetterBtn">Open Your Letter 💌</button>
+      <button id="toVideoBtn" class="hidden">One Last Surprise ✨</button>
+    </div>
+
+    <!-- FULLSCREEN LETTER VIEWER -->
+
+    <div id="letterViewer" class="hidden">
+      <div class="letter-backdrop"></div>
+
+      <div class="letter-container">
+        <div class="letter-paper">
+          <p id="letterText">
+            My Love ❤️,<br />
+            From the moment you came into my life, everything started feeling
+            more beautiful... You are my happiness, my peace, and the most
+            special part of my world. <br />
+            I love you more than words can ever express. <br />
+            Happy Birthday Hetu ❤️
+          </p>
+          <div class="signature">
+            <p>Forever yours,</p>
+
+            <img src="images/signature.png" alt="signature" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="videoSection" class="hidden">
+      <div class="video-container">
+        <video id="birthdayVideo" controls playsinline>
+          <source src="videos/birthday.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <button id="finalSceneBtn">One Final thing ✨</button>
+    </div>
+
+    <div id="finalScene" class="hidden">
+      <div id="stars"></div>
+
+      <div class="finalText">
+        <h1 id="nameStars">Happy Birthday Hetu ❤️</h1>
+
+        <p id="finalMessage">You are the most beautiful part of my life.</p>
+
+        <h2 id="loveText" class="hidden">I Love You Hetu ❤️</h2>
+      </div>
+    </div>
+
+    <audio id="bgMusic" loop>
+      <source src="music/romantic.mp3" type="audio/mp3" />
+    </audio>
+
+    <audio id="popSound" src="sounds/balloon-pop.mp3"></audio>
+
+    <audio id="fireworkSound" src="sounds/firework.mp3"></audio>
+
+    <audio id="sparkleSound" src="sounds/sparkle.mp3"></audio>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDe_9euhyKz7EaX7G-rWNjYnVj-7GcdnRM",
+        authDomain: "bday-a125a.firebaseapp.com",
+        projectId: "bday-a125a",
+        storageBucket: "bday-a125a.firebasestorage.app",
+        messagingSenderId: "692175890745",
+        appId: "1:692175890745:web:9af75fae09f93ed50320e8",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      window.firebaseAuth = auth;
+      window.signInWithEmailAndPassword = signInWithEmailAndPassword;
+    </script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
